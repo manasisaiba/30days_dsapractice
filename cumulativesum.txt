@@ -1,0 +1,11 @@
+vector<int> getCumulativeSum(vector<int> &arr) {
+	// add your logic here
+	
+	int n=arr.size();
+	
+	vector<int>v(n);v[0]=arr[0];
+	for(int i=1;i<arr.size();i++){
+		v[i]=v[i-1]+arr[i];		
+	}
+	return v;
+}
