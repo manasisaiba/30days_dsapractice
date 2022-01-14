@@ -1,0 +1,27 @@
+bool isBalancedParentheses(string str) {
+    // add your logic here
+	stack<int>s;
+	int n=str.length();
+	for(int i=0;i<n;i++){
+		
+		if(str[i]=='('||str[i]=='{'||str[i]=='['){
+				s.push(str[i]);
+		}
+		else if(!s.empty()){
+				if(str[i]==')'&&s.top()=='('){
+					s.pop();
+				}
+				else if(str[i]==']'&&s.top()=='['){
+					s.pop();
+				}
+
+				else if(str[i]=='}'&&s.top()=='{'){
+					s.pop();
+				}
+				else return false;
+				}
+		else 
+				return false;
+	}
+		return s.empty();
+}
