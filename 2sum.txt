@@ -1,0 +1,17 @@
+pair<int,int> twoSum(vector<int> &A, int target) {
+    // add your logic here
+	pair<int,int>pp;
+	unordered_map<int,int>mp;
+	int n=A.size();
+	
+	for(int i=0;i<n;i++){
+		if(mp.count(target-A[i])){
+			pp.first=(mp[target-A[i]]);
+			pp.second=i;
+			return pp;
+		}
+		mp[A[i]]=i;
+		
+	}
+	return pp;
+}
